@@ -755,6 +755,21 @@ describe('array getters', () => {
       expect(RNDeviceInfo.isTablet()).toEqual(false);
     });
   });
+  describe('isFold', () => {
+    beforeEach(() => {
+      clearMemo();
+      Platform.OS = 'android';
+    });
+
+    it('should exist as function', () => {
+      expect(typeof RNDeviceInfo.isFold).toBe('function');
+    });
+
+    it.each(['android', 'ios'])('should support OS, %s, by return getter value', (os) => {
+      Platform.OS = os as any;
+      expect(RNDeviceInfo.isFold()).toEqual(true);
+    });
+  });
 });
 
 describe('Object Getters', () => {

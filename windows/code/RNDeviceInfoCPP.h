@@ -42,6 +42,7 @@ namespace winrt::RNDeviceInfoCPP
       provider.Add(L"appVersion", getAppVersionSync());
       provider.Add(L"buildNumber", getBuildNumberSync());
       provider.Add(L"isTablet", isTabletSync());
+      provider.Add(L"isFold", isFoldSync());
       provider.Add(L"appName", getAppNameSync());
       provider.Add(L"brand", getBrandSync());
       provider.Add(L"model", getModelSync());
@@ -752,6 +753,12 @@ namespace winrt::RNDeviceInfoCPP
     void isTablet(ReactPromise<bool> promise) noexcept
     {
       promise.Resolve(isTabletSync());
+    }
+
+    REACT_METHOD(isFold);
+    bool isFold() noexcept
+    {
+      return false;
     }
 
     REACT_SYNC_METHOD(getTotalMemorySync);

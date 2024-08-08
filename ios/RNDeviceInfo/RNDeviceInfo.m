@@ -67,6 +67,7 @@ RCT_EXPORT_MODULE();
          @"appVersion": [self getAppVersion],
          @"buildNumber": [self getBuildNumber],
          @"isTablet": @([self isTablet]),
+         @"isFold": @([self isFold]),
          @"appName": [self getAppName],
          @"brand": @"Apple",
          @"model": [self getModel],
@@ -451,6 +452,11 @@ RCT_EXPORT_METHOD(isEmulator:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromis
         return NO;
     }
 }
+
+- (BOOL) isFold {
+    return NO;
+}
+
 
 RCT_EXPORT_METHOD(getDeviceToken:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
     if (@available(iOS 11.0, *)) {

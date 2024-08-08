@@ -2,6 +2,7 @@ package com.learnium.RNDeviceInfo.resolver;
 
 import android.app.UiModeManager;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.util.DisplayMetrics;
@@ -26,10 +27,19 @@ public class DeviceTypeResolver {
     return getDeviceType() == DeviceType.TABLET;
   }
 
+
+  public boolean isFold() {
+    return getDeviceType() == DeviceType.FOLD;
+  }
+
   public DeviceType getDeviceType() {
     // Detect TVs via ui mode (Android TVs) or system features (Fire TV).
     if (context.getPackageManager().hasSystemFeature("amazon.hardware.fire_tv")) {
       return DeviceType.TV;
+    }
+
+    if(context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_HINGE_ANGLE)){
+      return DeviceType.FOLD;
     }
 
     UiModeManager uiManager = (UiModeManager) context.getSystemService(Context.UI_MODE_SERVICE);

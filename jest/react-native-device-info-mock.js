@@ -149,6 +149,7 @@ const diMock = {
   isKeyboardConnectedSync: booleanFnSync(),
   isTabletMode: booleanFnAsync(),
   isTablet: booleanFnSync(),
+  isFold: booleanFnSync(),
   isLowRamDevice: booleanFnSync(),
   supported32BitAbis: arrayFnAsync(),
   supported32BitAbisSync: arrayFnSync(),

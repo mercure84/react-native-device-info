@@ -249,6 +249,7 @@ public class RNDeviceModule extends ReactContextBaseJavaModule {
     constants.put("appVersion", appVersion);
     constants.put("buildNumber", buildNumber);
     constants.put("isTablet", deviceTypeResolver.isTablet());
+    constants.put("isFold", deviceTypeResolver.isFold());
     constants.put("isLowRamDevice", isLowRamDevice());
     constants.put("appName", appName);
     constants.put("brand", Build.BRAND);

@@ -30,7 +30,7 @@ for (const key of stringKeys) {
   RNDeviceInfo[key] = 'unknown-test';
 }
 
-const booleanKeys = ['isTablet'];
+const booleanKeys = ['isTablet', 'isFold'];
 for (const key of booleanKeys) {
   RNDeviceInfo[key] = true;
 }

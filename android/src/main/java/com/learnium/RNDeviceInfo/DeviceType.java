@@ -4,7 +4,8 @@ public enum DeviceType {
     HANDSET ("Handset"),
     TABLET ("Tablet"),
     TV ("Tv"),
-    UNKNOWN ("unknown");
+    UNKNOWN ("unknown"),
+    FOLD("Fold");
 
     private final String value;
 
@@ -15,4 +16,6 @@ public enum DeviceType {
     public String getValue() {
         return value;
     }
+
+
 }
